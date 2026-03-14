@@ -6,12 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import UnderConstruction from "./pages/UnderConstruction.tsx";
+import CursorTrail from "./components/CursorTrail.tsx";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <CursorTrail />
       <Toaster />
       <Sonner />
       <BrowserRouter>
