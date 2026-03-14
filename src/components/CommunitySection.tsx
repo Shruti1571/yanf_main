@@ -1,69 +1,107 @@
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
-import { useRef } from "react";
+import { useState } from "react";
 
 const members = [
-  { name: "Arjun Patel", role: "Founder & President" },
-  { name: "Sneha Verma", role: "Vice President" },
-  { name: "Rohan Desai", role: "Head of Operations" },
-  { name: "Kavya Nair", role: "Director of Events" },
-  { name: "Aditya Sharma", role: "Head of PR" },
-  { name: "Ishita Gupta", role: "Creative Director" },
+  { name: "Arjun Mehta", role: "MUN Chair", emoji: "👤" },
+  { name: "Priya Sharma", role: "Debate Lead", emoji: "👤" },
+  { name: "Rohan Das", role: "Innovation Head", emoji: "👤" },
+  { name: "Ananya Gupta", role: "Youth Parliament", emoji: "👤" },
+  { name: "Karan Singh", role: "Community Lead", emoji: "👤" },
+  { name: "Tara Bose", role: "Events Coordinator", emoji: "👤" },
+  { name: "Vikram Patel", role: "Secretary-General", emoji: "👤" },
+  { name: "Isha Reddy", role: "Research Head", emoji: "👤" },
 ];
 
 const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [idx, setIdx] = useState(0);
+
+  const slide = (dir: number) => {
+    const max = Math.max(0, members.length - 5);
+    setIdx((prev) => Math.max(0, Math.min(prev + dir, max)));
+  };
 
   return (
-    <section className="section-padding">
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-display font-bold text-gradient-gold mb-4"
-        >
-          Be a Part of the Community
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="text-muted-foreground font-body mb-12 max-w-2xl mx-auto"
-        >
-          Meet the passionate individuals driving YANF's mission forward. Together, we're building the future.
-        </motion.p>
+    <section id="community" className="section-padding"
+      style={{ background: "hsl(var(--navy2))", borderTop: "1px solid hsl(var(--border))" }}
+    >
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-[1200px] mx-auto mb-14 text-center"
+      >
+        <div className="section-label text-center">Our People</div>
+        <h2 className="section-title text-center">Be a Part of a <span>Thriving Community</span></h2>
+        <div className="gold-line mx-auto mb-6" />
+        <p className="font-serif text-lg italic text-muted-foreground max-w-[600px] mx-auto">
+          Meet the faces behind the movement — students, chairs, mentors, and visionaries united by a shared purpose.
+        </p>
+      </motion.div>
 
-        <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
-          {members.map((m, i) => (
-            <motion.div
-              key={m.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="min-w-[180px] snap-center flex flex-col items-center p-6 rounded-xl border border-border bg-card hover:gold-glow transition-shadow"
-            >
-              <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center mb-4 border border-border">
-                <User className="h-10 w-10 text-primary/60" />
+      {/* Slider */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-[1200px] mx-auto relative overflow-hidden"
+      >
+        <div
+          className="flex transition-transform duration-500"
+          style={{
+            transform: `translateX(-${idx * (100 / 5 + 1)}%)`,
+            transitionTimingFunction: "cubic-bezier(0.25,0.46,0.45,0.94)",
+          }}
+        >
+          {members.map((m) => (
+            <div key={m.name} className="flex-shrink-0 mr-5 text-center group" style={{ minWidth: "calc(20% - 1rem)" }}>
+              <div
+                className="w-full aspect-square flex items-center justify-center text-4xl mb-3 relative overflow-hidden transition-all"
+                style={{
+                  background: "linear-gradient(135deg, hsl(var(--navy-light)), hsl(var(--gold) / 0.15))",
+                  border: "1px solid hsl(var(--border))",
+                }}
+              >
+                {m.emoji}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ background: "linear-gradient(to top, hsl(var(--gold) / 0.1), transparent)" }}
+                />
               </div>
-              <p className="font-display font-semibold text-foreground text-sm">{m.name}</p>
-              <p className="text-muted-foreground text-xs font-body mt-1">{m.role}</p>
-            </motion.div>
+              <div className="font-display text-[0.72rem] font-semibold text-primary tracking-[0.1em] mb-0.5">{m.name}</div>
+              <div className="text-[0.65rem] text-muted-foreground tracking-[0.1em] font-body">{m.role}</div>
+            </div>
           ))}
         </div>
 
-        <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          onClick={onJoinClick}
-          className="mt-10 px-8 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-sm tracking-wider uppercase hover:opacity-90 transition-opacity gold-glow"
-        >
-          Join Our Community
-        </motion.button>
-      </div>
+        {/* Controls */}
+        <div className="flex gap-3 mt-8 justify-center">
+          <button
+            onClick={() => slide(-1)}
+            className="w-[42px] h-[42px] flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-background transition-all cursor-pointer"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => slide(1)}
+            className="w-[42px] h-[42px] flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-background transition-all cursor-pointer"
+          >
+            →
+          </button>
+        </div>
+      </motion.div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mt-14"
+      >
+        <p className="font-serif text-xl italic text-cream-soft opacity-70 mb-6">
+          Ready to make your mark on history?
+        </p>
+        <button onClick={onJoinClick} className="btn-primary-yanf">Join the Community</button>
+      </motion.div>
     </section>
   );
 };

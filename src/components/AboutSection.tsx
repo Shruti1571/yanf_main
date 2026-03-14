@@ -2,31 +2,62 @@ import { motion } from "framer-motion";
 import yanfLogo from "@/assets/yanf-logo.jpeg";
 
 const AboutSection = () => (
-  <section className="section-padding">
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <section id="about" className="section-padding" style={{ background: "hsl(var(--navy2))", borderTop: "1px solid hsl(var(--border))", borderBottom: "1px solid hsl(var(--border))" }}>
+    <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+      {/* Logo Ring */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="flex justify-center"
+        className="flex items-center justify-center"
       >
-        <img src={yanfLogo} alt="YANF Logo" className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover gold-border gold-glow" />
+        <div
+          className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-full flex items-center justify-center"
+          style={{
+            background: "radial-gradient(circle at 40% 40%, #1a1200, hsl(var(--navy)))",
+            border: "1px solid hsl(var(--gold) / 0.3)",
+            boxShadow: "0 0 60px hsl(var(--gold) / 0.1), inset 0 0 60px rgba(0,0,0,0.5)",
+          }}
+        >
+          {/* Inner ring */}
+          <div className="absolute inset-2 rounded-full" style={{ border: "1px solid hsl(var(--gold) / 0.15)" }} />
+          {/* Rotating dashed ring */}
+          <div className="absolute inset-5 rounded-full animate-ring-rotate" style={{ border: "1px dashed hsl(var(--gold) / 0.1)" }} />
+          {/* Logo image */}
+          <img src={yanfLogo} alt="YANF Logo" className="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" style={{ border: "2px solid hsl(var(--gold) / 0.3)" }} />
+        </div>
       </motion.div>
+
+      {/* Text */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="space-y-6"
       >
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-gradient-gold">About YANF</h2>
-        <p className="text-foreground/70 font-body leading-relaxed">
-          Youth As Nation's Front (YANF) is a premier platform dedicated to nurturing future leaders, diplomats, and change-makers. Founded in 2026, we provide students with immersive experiences in Model United Nations, parliamentary debates, and innovation assemblies.
+        <div className="section-label">Who We Are</div>
+        <h2 className="section-title">About <span>YANF</span></h2>
+        <div className="gold-line mb-8" />
+        <p className="font-serif text-lg text-cream-soft leading-[1.85] opacity-90 mb-6">
+          YANF — Youth As Nation's Front — is a premier educational platform dedicated to cultivating the diplomatic mindset, leadership acumen, and geopolitical awareness of India's next generation.
         </p>
-        <p className="text-foreground/70 font-body leading-relaxed">
-          Our mission is to create a generation that understands geopolitics, speaks with confidence, and leads with integrity. Through our carefully curated events, we bridge the gap between academic knowledge and real-world diplomatic skills.
+        <p className="font-serif text-lg text-cream-soft leading-[1.85] opacity-90 mb-8">
+          Founded on the belief that today's youth are tomorrow's nation-builders, YANF creates immersive environments where young minds learn to debate, deliberate, and lead with confidence and conviction.
         </p>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { label: "For Whom", value: "Students aged 13–25" },
+            { label: "Founded", value: "2026, India" },
+            { label: "Focus", value: "Diplomacy & Leadership" },
+            { label: "Mode", value: "Events, Workshops & Summits" },
+          ].map((f) => (
+            <div key={f.label} className="border-l-2 border-primary pl-4">
+              <div className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-primary mb-1 font-body">{f.label}</div>
+              <div className="font-serif text-[0.95rem] text-cream-soft">{f.value}</div>
+            </div>
+          ))}
+        </div>
       </motion.div>
     </div>
   </section>

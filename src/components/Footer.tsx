@@ -1,34 +1,91 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-card/50 py-12 px-6">
-    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+  <footer className="px-6 md:px-16 pt-16 pb-8" style={{ background: "#060810", borderTop: "1px solid hsl(var(--border))" }}>
+    <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 mb-12">
+      {/* Brand */}
       <div>
-        <h3 className="font-display font-bold text-xl text-gradient-gold mb-4">YANF</h3>
-        <p className="text-muted-foreground text-sm font-body leading-relaxed">
-          Youth As Nation's Front — Empowering the next generation of leaders, diplomats, and change-makers.
+        <div className="font-display text-2xl font-black text-primary tracking-[0.1em] mb-1">YANF</div>
+        <div className="text-[0.68rem] tracking-[0.15em] text-muted-foreground uppercase mb-4 font-body">
+          Youth As Nation's Front · Est. 2026
+        </div>
+        <p className="font-serif text-[0.9rem] leading-[1.75] text-muted-foreground">
+          Empowering India's youth with the tools of diplomacy, leadership, and geopolitical awareness. Building the nation's front, one student at a time.
         </p>
       </div>
+
+      {/* Navigate */}
       <div>
-        <h4 className="font-display font-semibold text-foreground mb-4">Quick Links</h4>
-        <div className="space-y-2 text-sm font-body">
-          <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">Home</a>
-          <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">About</a>
-          <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">Events</a>
-          <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">Contact</a>
-        </div>
+        <div className="font-display text-[0.72rem] font-semibold tracking-[0.2em] uppercase text-primary mb-5">Navigate</div>
+        <ul className="space-y-2.5">
+          {["Home", "About YANF", "Events", "Why Us", "Community"].map((l) => (
+            <li key={l}>
+              <a href={`#${l.toLowerCase().replace(/ /g, "-").replace("home", "")}`}
+                className="text-[0.8rem] text-muted-foreground hover:text-primary transition-colors tracking-[0.05em] font-body"
+              >
+                {l}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Events */}
       <div>
-        <h4 className="font-display font-semibold text-foreground mb-4">Contact Us</h4>
-        <div className="space-y-3 text-sm font-body text-muted-foreground">
-          <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> contact@yanf.org</div>
-          <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +91 XXXXX XXXXX</div>
-          <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> India</div>
+        <div className="font-display text-[0.72rem] font-semibold tracking-[0.2em] uppercase text-primary mb-5">Events</div>
+        <ul className="space-y-2.5">
+          {[
+            { label: "MUNs", path: "/events/muns" },
+            { label: "Debates", path: "/events/debates" },
+            { label: "Youth Parliament", path: "/events/youth-parliament" },
+            { label: "Innovation Assembly", path: "/events/innovation-assembly" },
+            { label: "Gallery", path: "/gallery" },
+          ].map((l) => (
+            <li key={l.label}>
+              <Link to={l.path} target="_blank"
+                className="text-[0.8rem] text-muted-foreground hover:text-primary transition-colors tracking-[0.05em] font-body"
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <div className="font-display text-[0.72rem] font-semibold tracking-[0.2em] uppercase text-primary mb-5">Contact</div>
+        <div className="space-y-2.5 text-[0.78rem] text-muted-foreground font-body">
+          <div className="flex gap-2 items-start leading-snug">
+            <span className="text-primary flex-shrink-0">✉</span>
+            <span>contact@yanf.org</span>
+          </div>
+          <div className="flex gap-2 items-start leading-snug">
+            <span className="text-primary flex-shrink-0">📞</span>
+            <span>+91 98765 43210</span>
+          </div>
+          <div className="flex gap-2 items-start leading-snug">
+            <span className="text-primary flex-shrink-0">📍</span>
+            <span>New Delhi, India</span>
+          </div>
         </div>
       </div>
     </div>
-    <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-border text-center text-xs text-muted-foreground font-body">
-      © 2026 Youth As Nation's Front (YANF). All rights reserved.
+
+    {/* Bottom */}
+    <div className="max-w-[1200px] mx-auto pt-8 border-t border-border flex items-center justify-between flex-wrap gap-4">
+      <div className="text-[0.72rem] text-muted-foreground tracking-[0.1em] font-body">
+        © 2026 <span className="text-primary">YANF</span> — Youth As Nation's Front. All rights reserved.
+      </div>
+      <div className="flex gap-3">
+        {["in", "tw", "ig", "yt"].map((s) => (
+          <a key={s} href="#"
+            className="w-[34px] h-[34px] flex items-center justify-center border border-primary/20 text-[0.75rem] text-muted-foreground hover:border-primary hover:text-primary transition-all font-body"
+          >
+            {s}
+          </a>
+        ))}
+      </div>
     </div>
   </footer>
 );

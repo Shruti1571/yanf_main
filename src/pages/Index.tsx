@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar onJoinClick={() => setJoinOpen(true)} />
       <HeroSection onJoinClick={() => setJoinOpen(true)} />
       <AboutSection />
       <MissionVisionSection />
