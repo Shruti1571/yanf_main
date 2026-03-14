@@ -1,48 +1,101 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
-const feedbacks = [
-  { name: "Dr. Rajesh Kumar", role: "Director, National Youth Policy Forum", quote: "YANF has set a new benchmark for youth-led diplomatic initiatives. Their attention to detail and commitment to excellence is truly commendable." },
-  { name: "Prof. Ananya Sharma", role: "Dean, School of International Relations", quote: "I've witnessed remarkable growth in students who participate in YANF events. The platform truly transforms young minds into confident leaders." },
-  { name: "Ambassador Vikram Singh", role: "Former UN Delegate", quote: "The quality of debate and discourse at YANF events rivals that of many professional forums. These students are the future of global diplomacy." },
-  { name: "Ms. Priya Mehta", role: "CEO, Youth Empowerment Foundation", quote: "Partnering with YANF has been one of our most impactful collaborations. Their vision for youth empowerment aligns perfectly with ours." },
+const testimonials = [
+  { initial: "A", name: "Ambassador Rajiv Nair", role: "Former Diplomat, Ministry of External Affairs", quote: "YANF represents exactly the kind of youth initiative India needs. Their MUN conferences produced some of the most articulate young delegates I have ever had the privilege of witnessing." },
+  { initial: "P", name: "Prof. Meera Chandrashekhar", role: "Dean of Political Science, Delhi University", quote: "The depth of preparation and intellectual rigour that YANF brings to their debates is remarkable. These students demonstrate a level of geopolitical awareness that rivals university graduates." },
+  { initial: "S", name: "Siddharth Agarwal", role: "CEO, StartupIndia Foundation", quote: "We partnered with YANF for the Innovation Assembly and were astounded by the quality of solutions presented. This organisation is building India's future problem-solvers." },
+  { initial: "N", name: "Nandita Rao", role: "Principal, Springfields International School", quote: "YANF's Youth Parliament gave our students an experience no classroom could replicate. The confidence and clarity they developed in just one event was transformational." },
 ];
 
 const FeedbackSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [idx, setIdx] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const slide = (dir: number) => {
+    const max = Math.max(0, testimonials.length - 3);
+    setIdx((prev) => Math.max(0, Math.min(prev + dir, max)));
+  };
 
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-display font-bold text-gradient-gold text-center mb-12"
+    <section id="testimonials" className="section-padding"
+      style={{ background: "hsl(var(--navy))", borderTop: "1px solid hsl(var(--border))" }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-[1200px] mx-auto mb-14"
+      >
+        <div className="section-label">What Leaders Say</div>
+        <h2 className="section-title">Voices of <span>Authority</span></h2>
+        <div className="gold-line" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-[1200px] mx-auto relative overflow-hidden"
+      >
+        <div
+          ref={trackRef}
+          className="flex transition-transform duration-500"
+          style={{
+            transform: `translateX(-${idx * (100 / 3 + 1.5)}%)`,
+            transitionTimingFunction: "cubic-bezier(0.25,0.46,0.45,0.94)",
+          }}
         >
-          What They Say
-        </motion.h2>
-        <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
-          {feedbacks.map((fb, i) => (
-            <motion.div
-              key={fb.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="min-w-[300px] flex-1 snap-center p-6 rounded-xl border border-border bg-card"
+          {testimonials.map((t) => (
+            <div
+              key={t.name}
+              className="relative flex-shrink-0 mr-6 p-10"
+              style={{
+                minWidth: "calc(33.33% - 1rem)",
+                background: "hsl(var(--navy-light))",
+                border: "1px solid hsl(var(--border))",
+              }}
             >
-              <Quote className="h-8 w-8 text-primary/40 mb-4" />
-              <p className="text-foreground/70 text-sm font-body italic leading-relaxed mb-6">"{fb.quote}"</p>
-              <div>
-                <p className="font-display font-semibold text-foreground">{fb.name}</p>
-                <p className="text-muted-foreground text-xs font-body">{fb.role}</p>
+              {/* Quote mark */}
+              <div className="absolute top-4 right-6 font-serif text-[5rem] leading-none pointer-events-none" style={{ color: "hsl(var(--gold) / 0.12)" }}>
+                &ldquo;
               </div>
-            </motion.div>
+              {/* Avatar */}
+              <div
+                className="w-[52px] h-[52px] rounded-full flex items-center justify-center font-display text-lg font-bold mb-5"
+                style={{
+                  background: "linear-gradient(135deg, hsl(var(--gold)), hsl(var(--crimson)))",
+                  color: "hsl(var(--navy))",
+                  border: "2px solid hsl(var(--gold) / 0.3)",
+                }}
+              >
+                {t.initial}
+              </div>
+              <p className="font-serif text-base italic leading-[1.8] text-cream-soft opacity-85 mb-6">
+                {t.quote}
+              </p>
+              <div className="font-display text-[0.78rem] font-semibold text-primary tracking-[0.1em]">{t.name}</div>
+              <div className="text-[0.7rem] text-muted-foreground tracking-[0.08em] mt-1 font-body">{t.role}</div>
+            </div>
           ))}
         </div>
-      </div>
+
+        {/* Slider controls */}
+        <div className="flex gap-3 mt-8 justify-center">
+          <button
+            onClick={() => slide(-1)}
+            className="w-[42px] h-[42px] flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-background transition-all cursor-pointer text-base"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => slide(1)}
+            className="w-[42px] h-[42px] flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-background transition-all cursor-pointer text-base"
+          >
+            →
+          </button>
+        </div>
+      </motion.div>
     </section>
   );
 };
