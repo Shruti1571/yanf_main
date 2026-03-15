@@ -25,7 +25,7 @@ const AboutSection = () => (
           {/* Rotating dashed ring */}
           <div className="absolute inset-5 rounded-full animate-ring-rotate" style={{ border: "1px dashed hsl(var(--gold) / 0.1)" }} />
           {/* Logo image */}
-          <img src={yanfLogo} alt="YANF Logo" className="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" style={{ border: "2px solid hsl(var(--gold) / 0.3)" }} />
+          <img src={yanfLogo} alt="YANF Logo" className="relative z-10 w-44 h-44 md:w-52 md:h-52 rounded-full object-cover object-center" style={{ border: "2px solid hsl(var(--gold) / 0.3)" }} />
         </div>
       </motion.div>
 
