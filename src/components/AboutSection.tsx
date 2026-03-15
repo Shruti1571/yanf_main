@@ -13,19 +13,15 @@ const AboutSection = () => (
         className="flex items-center justify-center"
       >
         <div
-          className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-full flex items-center justify-center"
+          className="relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-full flex items-center justify-center overflow-hidden"
           style={{
             background: "radial-gradient(circle at 40% 40%, #1a1200, hsl(var(--navy)))",
             border: "1px solid hsl(var(--gold) / 0.3)",
             boxShadow: "0 0 60px hsl(var(--gold) / 0.1), inset 0 0 60px rgba(0,0,0,0.5)",
           }}
         >
-          {/* Inner ring */}
-          <div className="absolute inset-2 rounded-full" style={{ border: "1px solid hsl(var(--gold) / 0.15)" }} />
-          {/* Rotating dashed ring */}
-          <div className="absolute inset-5 rounded-full animate-ring-rotate" style={{ border: "1px dashed hsl(var(--gold) / 0.1)" }} />
-          {/* Logo image */}
-          <img src={yanfLogo} alt="YANF Logo" className="relative z-10 w-44 h-44 md:w-52 md:h-52 rounded-full object-cover object-center" style={{ border: "2px solid hsl(var(--gold) / 0.3)" }} />
+          {/* Logo image - fills entire circle */}
+          <img src={yanfLogo} alt="YANF Logo" className="absolute inset-0 w-full h-full rounded-full object-cover object-center" />
         </div>
       </motion.div>
 

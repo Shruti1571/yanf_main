@@ -150,7 +150,7 @@ const HeroSection = ({ onJoinClick }: { onJoinClick: () => void }) => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28">
       {/* Globe canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
 
