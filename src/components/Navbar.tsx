@@ -67,10 +67,8 @@ const Navbar = ({ onJoinClick }: NavbarProps) => {
     >
       {/* Logo */}
       <Link to="/" className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center overflow-hidden"
-          style={{ boxShadow: "0 0 20px hsl(var(--gold) / 0.3)" }}
-        >
-          <img src={yanfLogo} alt="YANF Logo" className="w-full h-full object-cover" />
+        <div className="w-12 h-12 flex items-center justify-center overflow-hidden">
+          <img src={yanfLogo} alt="YANF Logo" className="w-full h-full object-contain" />
         </div>
         <div>
           <div className="font-display text-[1.1rem] font-bold text-primary tracking-[0.1em] leading-tight">YANF</div>
