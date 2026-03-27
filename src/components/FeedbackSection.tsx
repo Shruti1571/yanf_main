@@ -2,18 +2,17 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const testimonials = [
-  { name: "Ambassador Rajiv Nair", role: "Former Diplomat, Ministry of External Affairs", quote: "YANF represents exactly the kind of youth initiative India needs. Their MUN conferences produced some of the most articulate young delegates I have ever had the privilege of witnessing." },
-  { name: "Prof. Sarah Whitfield", role: "Chair, Department of International Relations, Oxford", quote: "The caliber of students YANF produces is remarkable. They arrive at our institutions already equipped with the analytical framework most graduates lack." },
-  { name: "Ambassador R.K. Sharma", role: "Former Indian Ambassador to the United Nations", quote: "We have partnered with YANF for three consecutive summits. Their organizational excellence and commitment to academic integrity sets a national benchmark." },
-  { name: "Dr. Priya Venkatesh", role: "Principal, Delhi International Academy", quote: "YANF's ability to engage with complex geopolitical issues while maintaining an extraordinary level of professionalism is truly commendable." },
-  { name: "Prof. Meera Chandrashekhar", role: "Dean of Political Science, Delhi University", quote: "The depth of preparation and intellectual rigour that YANF brings to their debates is remarkable. These students demonstrate a level of geopolitical awareness that rivals university graduates." },
-  { name: "Siddharth Agarwal", role: "CEO, StartupIndia Foundation", quote: "We partnered with YANF for the Innovation Assembly and were astounded by the quality of solutions presented. This organisation is building India's future problem-solvers." },
-  { name: "Nandita Rao", role: "Principal, Springfields International School", quote: "YANF's Youth Parliament gave our students an experience no classroom could replicate. The confidence and clarity they developed in just one event was transformational." },
-  { name: "Dr. Rohan Kapoor", role: "Director, Centre for Strategic Studies", quote: "The calibre of research and argumentation at YANF events is exceptional. These young minds are already contributing meaningfully to policy discourse in India." },
-  { name: "Deepika Sharma", role: "Education Advisor, NITI Aayog", quote: "YANF bridges the gap between textbook knowledge and real-world diplomacy. Their model parliament sessions are among the best-structured youth programmes I've seen." },
-  { name: "Vikram Malhotra", role: "Head of CSR, Tata Trusts", quote: "Investing in YANF was one of our best decisions. The organisation has a remarkable ability to identify and nurture leadership potential in young Indians from diverse backgrounds." },
-  { name: "Dr. Kavita Menon", role: "Professor of International Relations, JNU", quote: "I was invited as a jury member and was thoroughly impressed. The students' understanding of multilateral diplomacy and conflict resolution was far beyond their years." },
-  { name: "Justice Arun Prakash", role: "Retired Judge, Supreme Court of India", quote: "YANF's commitment to nurturing democratic values among youth is precisely what our nation needs. Their parliamentary simulations are conducted with remarkable authenticity." },
+  { name: "Jon Doe", role: "upcoming", quote: "upcoming" },
+  { name: "Jon Doe", role: "upcoming", quote: "upcoming." },
+  //{ name: "Dr. Priya Venkatesh", role: "Principal, Delhi International Academy", quote: "YANF's ability to engage with complex geopolitical issues while maintaining an extraordinary level of professionalism is truly commendable." },
+  //{ name: "Prof. Meera Chandrashekhar", role: "Dean of Political Science, Delhi University", quote: "The depth of preparation and intellectual rigour that YANF brings to their debates is remarkable. These students demonstrate a level of geopolitical awareness that rivals university graduates." },
+  //{ name: "Siddharth Agarwal", role: "CEO, StartupIndia Foundation", quote: "We partnered with YANF for the Innovation Assembly and were astounded by the quality of solutions presented. This organisation is building India's future problem-solvers." },
+  //{ name: "Nandita Rao", role: "Principal, Springfields International School", quote: "YANF's Youth Parliament gave our students an experience no classroom could replicate. The confidence and clarity they developed in just one event was transformational." },
+  //{ name: "Dr. Rohan Kapoor", role: "Director, Centre for Strategic Studies", quote: "The calibre of research and argumentation at YANF events is exceptional. These young minds are already contributing meaningfully to policy discourse in India." },
+  //{ name: "Deepika Sharma", role: "Education Advisor, NITI Aayog", quote: "YANF bridges the gap between textbook knowledge and real-world diplomacy. Their model parliament sessions are among the best-structured youth programmes I've seen." },
+  //{ name: "Vikram Malhotra", role: "Head of CSR, Tata Trusts", quote: "Investing in YANF was one of our best decisions. The organisation has a remarkable ability to identify and nurture leadership potential in young Indians from diverse backgrounds." },
+  //{ name: "Dr. Kavita Menon", role: "Professor of International Relations, JNU", quote: "I was invited as a jury member and was thoroughly impressed. The students' understanding of multilateral diplomacy and conflict resolution was far beyond their years." },
+  { name: "Jon Doe", role: "upcoming", quote: "upcoming." },
 ];
 
 const FeedbackSection = () => {

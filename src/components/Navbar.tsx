@@ -73,7 +73,7 @@ const Navbar = ({ onJoinClick }: NavbarProps) => {
         <div>
           <div className="font-display text-[1.1rem] font-bold text-primary tracking-[0.1em] leading-tight">YANF</div>
           <div className="font-body text-[0.6rem] font-normal text-muted-foreground tracking-[0.15em] uppercase">
-            Youth As Nation's Front
+            Youth As Nations' Front
           </div>
         </div>
       </Link>

@@ -7,7 +7,7 @@ const Footer = () => (
       <div>
         <div className="font-display text-2xl font-black text-primary tracking-[0.1em] mb-1">YANF</div>
         <div className="text-[0.68rem] tracking-[0.15em] text-muted-foreground uppercase mb-4 font-body">
-          Youth As Nation's Front · Est. 2026
+          Youth As Nations' Front · Est. 2026
         </div>
         <p className="font-serif text-[0.9rem] leading-[1.75] text-muted-foreground">
           Empowering India's youth with the tools of diplomacy, leadership, and geopolitical awareness. Building the nation's front, one student at a time.
@@ -39,7 +39,7 @@ const Footer = () => (
             { label: "Debates", path: "/events/debates" },
             { label: "Youth Parliament", path: "/events/youth-parliament" },
             { label: "Innovation Assembly", path: "/events/innovation-assembly" },
-            { label: "Gallery", path: "/gallery" },
+            // { label: "Gallery", path: "/gallery" },
           ].map((l) => (
             <li key={l.label}>
               <Link to={l.path} target="_blank"
@@ -58,15 +58,15 @@ const Footer = () => (
         <div className="space-y-2.5 text-[0.78rem] text-muted-foreground font-body">
           <div className="flex gap-2 items-start leading-snug">
             <span className="text-primary flex-shrink-0">✉</span>
-            <span>contact@yanf.org</span>
+            <span>hello@yanfglobal.com</span>
           </div>
           <div className="flex gap-2 items-start leading-snug">
             <span className="text-primary flex-shrink-0">📞</span>
-            <span>+91 98765 43210</span>
+            <span>+91 7764863571</span>
           </div>
           <div className="flex gap-2 items-start leading-snug">
             <span className="text-primary flex-shrink-0">📍</span>
-            <span>New Delhi, India</span>
+            <span>Gurugram, Delhi-NCR, India</span>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ const Footer = () => (
     {/* Bottom */}
     <div className="max-w-[1200px] mx-auto pt-8 border-t border-border flex items-center justify-between flex-wrap gap-4">
       <div className="text-[0.72rem] text-muted-foreground tracking-[0.1em] font-body">
-        © 2026 <span className="text-primary">YANF</span> — Youth As Nation's Front. All rights reserved.
+        © 2026 <span className="text-primary">YANF</span> — Youth As Nations' Front. All rights reserved.
       </div>
       <div className="flex gap-3">
         {["in", "tw", "ig", "yt"].map((s) => (

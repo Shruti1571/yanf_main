@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const events = [
-  { icon: "🌍", title: "MUNs", desc: "Model United Nations conferences that challenge students to represent nations, negotiate resolutions, and develop the art of multilateral diplomacy.", path: "/events/muns" },
-  { icon: "🎙️", title: "Debates", desc: "Structured debating competitions that sharpen logical reasoning, rhetorical skill, and the confidence to stand firm under intellectual pressure.", path: "/events/debates" },
-  { icon: "🏛️", title: "Youth Parliament", desc: "A live simulation of parliamentary procedures where students draft bills, debate policy, and experience democratic governance firsthand.", path: "/events/youth-parliament" },
-  { icon: "💡", title: "Innovation Assembly", desc: "A platform where creative minds pitch solutions to real-world challenges — bridging technology, policy, and entrepreneurial thinking.", path: "/events/innovation-assembly" },
+  { icon: "🌍", title: "MUNs", desc: "Step into the shoes of world diplomats. Research global issues, debate with nations, and draft resolutions that echo real UN deliberations.", path: "/events/muns" },
+  { icon: "🎙️", title: "Debates", desc: "Master the Asian Parliamentary and British Parliamentary formats — where logic, rhetoric, and conviction win the floor.", path: "/events/debates" },
+  { icon: "🏛️", title: "Youth Parliament", desc: "Simulate Lok Sabha, Rajya Sabha, AIPPM, NITI Aayog & more. Build constitutional awareness and democratic responsibility.", path: "/events/youth-parliament" },
+  { icon: "💡", title: "Innovation Assembly", desc: "Students pitch bold ideas as Innovators and evaluate opportunities as Investors — living both sides of the table, competing for Best Entrepreneur & Best Investor.", path: "/events/innovation-assembly" },
 ];
 
 const EventsSection = () => (

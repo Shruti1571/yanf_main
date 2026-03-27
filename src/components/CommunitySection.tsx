@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+//import { useState } from "react";
 
 const members = [
-  { name: "Arjun Mehta", role: "MUN Chair", emoji: "👤" },
-  { name: "Priya Sharma", role: "Debate Lead", emoji: "👤" },
-  { name: "Rohan Das", role: "Innovation Head", emoji: "👤" },
-  { name: "Ananya Gupta", role: "Youth Parliament", emoji: "👤" },
-  { name: "Karan Singh", role: "Community Lead", emoji: "👤" },
-  { name: "Tara Bose", role: "Events Coordinator", emoji: "👤" },
-  { name: "Vikram Patel", role: "Secretary-General", emoji: "👤" },
-  { name: "Isha Reddy", role: "Research Head", emoji: "👤" },
+  //{ name: "Arjun Mehta", role: "MUN Chair", emoji: "👤" },
+  //{ name: "Priya Sharma", role: "Debate Lead", emoji: "👤" },
+  //{ name: "Rohan Das", role: "Innovation Head", emoji: "👤" },
+  //{ name: "Aditya Kumar", role: "FOUNDER", emoji: "👤" },
+  //{ name: "Karan Singh", role: "Community Lead", emoji: "👤" },
+  //{ name: "Tara Bose", role: "Events Coordinator", emoji: "👤" },
+  { name: "Aditya Kumar", role: "FOUNDER", emoji: "👤" },
+  { name: "Shruti Sharma", role: "Tech Head", emoji: "👤" },
 ];
 
 const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
-  const [idx, setIdx] = useState(0);
+  // const [idx, setIdx] = useState(0);
 
-  const slide = (dir: number) => {
-    const max = Math.max(0, members.length - 5);
-    setIdx((prev) => Math.max(0, Math.min(prev + dir, max)));
-  };
+  // const slide = (dir: number) => {
+  //   const max = Math.max(0, members.length - 5);
+  //   setIdx((prev) => Math.max(0, Math.min(prev + dir, max)));
+  // };
 
   return (
     <section id="community" className="section-padding"
@@ -40,13 +40,15 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
       </motion.div>
 
       {/* Slider */}
+      {/* Cards - 2 cards fitting the screen */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-[1200px] mx-auto relative overflow-hidden"
+        //className="max-w-[1200px] mx-auto relative overflow-hidden"
+        className="max-w-[1200px] mx-auto flex justify-center gap-8"
       >
-        <div
+        {/* <div
           className="flex transition-transform duration-500"
           style={{
             transform: `translateX(-${idx * (100 / 5 + 1)}%)`,
@@ -68,13 +70,26 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
                 />
               </div>
               <div className="font-display text-[0.72rem] font-semibold text-primary tracking-[0.1em] mb-0.5">{m.name}</div>
-              <div className="text-[0.65rem] text-muted-foreground tracking-[0.1em] font-body">{m.role}</div>
+              <div className="text-[0.65rem] text-muted-foreground tracking-[0.1em] font-body">{m.role}</div>*/}
+               {members.map((m) => (
+          <div key={m.name} className="w-[300px] text-center group">
+            <div
+              className="w-full aspect-square flex items-center justify-center text-5xl mb-4 relative overflow-hidden transition-all"
+              style={{
+                background: "linear-gradient(135deg, hsl(var(--navy-light)), hsl(var(--gold) / 0.15))",
+                border: "1px solid hsl(var(--border))",
+              }}
+            >
+              {m.emoji}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ background: "linear-gradient(to top, hsl(var(--gold) / 0.1), transparent)" }}
+              />
             </div>
-          ))}
-        </div>
+          {/* ))}
+        </div>  */}
 
         {/* Controls */}
-        <div className="flex gap-3 mt-8 justify-center">
+        {/* <div className="flex gap-3 mt-8 justify-center">
           <button
             onClick={() => slide(-1)}
             className="w-[42px] h-[42px] flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-background transition-all cursor-pointer"
@@ -87,8 +102,14 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
           >
             →
           </button>
-        </div>
-      </motion.div>
+        </div>*/}
+
+        <div className="font-display text-sm font-semibold text-primary tracking-[0.1em] mb-1">{m.name}</div>
+            <div className="text-xs text-muted-foreground tracking-[0.15em] uppercase font-body">{m.role}</div>
+          </div>
+        ))}
+      </motion.div> 
+      
 
       {/* CTA */}
       <motion.div

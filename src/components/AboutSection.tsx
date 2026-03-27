@@ -12,7 +12,7 @@ const AboutSection = () => (
         transition={{ duration: 0.7 }}
         className="flex items-center justify-center"
       >
-        <div className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px] flex items-center justify-center">
+        <div className="relative w-[400px] h-[400px] md:w-[550px] md:h-[550px] flex items-center justify-center">
           <img src={yanfLogo} alt="YANF Logo" className="w-full h-full object-contain" />
         </div>
       </motion.div>
@@ -43,7 +43,7 @@ const AboutSection = () => (
           As we embark on this journey, we invite you to be a part of a movement that goes beyond learning — a movement that builds leaders, inspires change, and shapes the future.
         </p>
         <p className="font-serif text-lg text-cream-soft leading-[1.85] opacity-90 italic">
-          Welcome to a community where ideas transform into action, and potential turns into impact.
+          "Welcome to a community where ideas transform into action, and potential turns into impact."
         </p>
       </motion.div>
     </div>
