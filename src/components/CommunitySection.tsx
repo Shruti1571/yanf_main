@@ -7,9 +7,10 @@ const members = [
   //{ name: "Rohan Das", role: "Innovation Head", emoji: "👤" },
   //{ name: "Aditya Kumar", role: "FOUNDER", emoji: "👤" },
   //{ name: "Karan Singh", role: "Community Lead", emoji: "👤" },
-  //{ name: "Tara Bose", role: "Events Coordinator", emoji: "👤" },
-  { name: "Aditya Kumar", role: "FOUNDER", emoji: "👤" },
-  { name: "Shruti Sharma", role: "Tech Head", emoji: "👤" },
+  
+  { name: "Aditya Kumar", role: "Founder", emoji: "👤" },
+  { name: "Shruti Sharma", role: "Tech & Infrastructure Head", emoji: "👤" },
+  { name: "Sourabh Yadav", role: "Delegate Excellence Head", emoji: "👤" },
 ];
 
 const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
@@ -35,7 +36,7 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
         <h2 className="section-title text-center">Be a Part of a <span>Thriving Community</span></h2>
         <div className="gold-line mx-auto mb-6" />
         <p className="font-serif text-lg italic text-muted-foreground max-w-[600px] mx-auto">
-          Meet the faces behind the movement — students, chairs, mentors, and visionaries united by a shared purpose.
+          Meet the faces behind the movement — chairs, mentors, and visionaries united by a shared purpose.
         </p>
       </motion.div>
 
