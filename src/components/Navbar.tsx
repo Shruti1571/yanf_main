@@ -25,7 +25,7 @@ const DropdownMenu = ({ items, isOpen }: { items: { label: string; path: string 
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
         transition={{ duration: 0.25 }}
-        className="absolute top-full left-0 min-w-[200px] border border-border bg-popover/98 backdrop-blur-xl z-50"
+       className="absolute top-full left-0 min-w-[200px] border border-border bg-background backdrop-blur-xl z-50 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.5)]"
         style={{ borderTop: "2px solid hsl(var(--gold))" }}
       >
         {items.map((item) => (
@@ -33,7 +33,7 @@ const DropdownMenu = ({ items, isOpen }: { items: { label: string; path: string 
             key={item.path}
             to={item.path}
             target="_blank"
-            className="block px-5 py-2.5 text-[0.75rem] tracking-[0.08em] text-foreground/80 hover:text-primary hover:bg-primary/[0.08] hover:pl-6 transition-all border-b border-primary/[0.07] font-body"
+            className="block px-5 py-2.5 text-[0.75rem] tracking-[0.08em] text-foreground/80 hover:text-primary hover:bg-primary/[0.08] hover:pl-7 hover:tracking-[0.12em] transition-all duration-300 ease-out border-b border-primary/[0.07] font-body"
           >
             {item.label}
           </Link>
@@ -67,7 +67,7 @@ const Navbar = ({ onJoinClick }: NavbarProps) => {
     >
       {/* Logo */}
       <Link to="/" className="flex items-center gap-3">
-        <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
+        <div className="w-10 h-10 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden">
           <img src={yanfLogo} alt="YANF Logo" className="w-full h-full object-contain" />
         </div>
         <div>

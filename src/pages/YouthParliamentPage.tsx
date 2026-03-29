@@ -63,7 +63,7 @@ const highlights = [
   { label: "Suitable For", value: "Grade 8 onwards" },
   { label: "Language", value: "Hindi & English" },
   { label: "Houses", value: "Lok Sabha, Rajya Sabha, Vidhan Sabha, AIPPM, NITI Aayog" },
-  { label: "Awards", value: "Best Speaker, Best Minister, Best Opposition Leader, Best Policy Brief" },
+  { label: "Awards", value: "Best Parliamentarian, Outstanding Parliamentarian, Special Mention" },
 ];
 
 const bodies = [
