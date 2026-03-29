@@ -47,7 +47,8 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         //className="max-w-[1200px] mx-auto relative overflow-hidden"
-        className="max-w-[1200px] mx-auto flex justify-center gap-8"
+        className="max-w-[1200px] mx-auto flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 px-4"
+      
       >
         {/* <div
           className="flex transition-transform duration-500"
@@ -73,7 +74,7 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
               <div className="font-display text-[0.72rem] font-semibold text-primary tracking-[0.1em] mb-0.5">{m.name}</div>
               <div className="text-[0.65rem] text-muted-foreground tracking-[0.1em] font-body">{m.role}</div>*/}
                {members.map((m) => (
-          <div key={m.name} className="w-[300px] text-center group">
+          <div key={m.name} className="w-full max-w-[280px] sm:w-[300px] text-center group">
             <div
               className="w-full aspect-square flex items-center justify-center text-5xl mb-4 relative overflow-hidden transition-all"
               style={{

@@ -51,7 +51,7 @@ const highlights = [
   { label: "Suitable For", value: "Grade 8 onwards" },
   { label: "Formats", value: "Asian Parliamentary & British Parliamentary" },
   { label: "Team Size", value: "AP: 3 per team | BP: 2 per team" },
-  { label: "Awards", value: "Best Speaker, Best Team, Best Floor Speech" },
+  { label: "Awards", value: "Best Speaker, Best Team" },
 ];
 
 const resources = [

@@ -51,7 +51,7 @@ const highlights = [
   { label: "Duration", value: "1 – 2 Days" },
   { label: "Suitable For", value: "Grade 9 onwards" },
   { label: "Roles", value: "Innovator (Entrepreneur) & Investor" },
-  { label: "Awards", value: "Best Entrepreneur, Best Investor, Most Innovative Idea, Best Pitch" },
+  { label: "Awards", value: "Best Investor, Best Innovative Idea, Best Pitch" },
 ];
 
 const resources = [

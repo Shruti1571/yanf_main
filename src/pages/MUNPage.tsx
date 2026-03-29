@@ -42,7 +42,7 @@ const highlights = [
   { label: "Duration", value: "2 – 3 Days" },
   { label: "Suitable For", value: "Grade 7 onwards" },
   { label: "Formats", value: "Beginner, Intermediate & Advanced" },
-  { label: "Awards", value: "Best Delegate, High Commendation, Verbal Mention, Best Position Paper" },
+  { label: "Awards", value: "Best Delegate, High Commendation, Special Mention" },
 ];
 
 const MUNPage = () => {
