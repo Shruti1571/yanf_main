@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import yanfLogo from "@/assets/yanf-logo.png";
 
 const eventItems = [
-  { label: "MUNs", path: "/events/muns" },
+  { label: "MUN", path: "/events/muns" },
   { label: "Debates", path: "/events/debates" },
   { label: "Youth Parliament", path: "/events/youth-parliament" },
   { label: "Innovation Assembly", path: "/events/innovation-assembly" },
