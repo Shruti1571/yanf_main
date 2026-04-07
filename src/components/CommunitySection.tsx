@@ -3,13 +3,12 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import founderPhoto from "@/assets/founder-aditya.jpg";
 
-const founderNote = `Nine years ago, I walked into a room I didn't quite belong in, nervous, position paper in hand, heart racing. I didn't know it then, but that room would change everything.
-
+const founderNote = `
 That was my first MUN. And somewhere between researching foreign policy at midnight and fumbling through my first speech, I fell in love, not just with debate, but with what these rooms do to people. I watched quiet students find their voice. I saw uncertain minds become decisive ones. I felt something shift, not just in a committee, but in the people inside it.
 
-Seventy-five conferences later, I'm still chasing that feeling. Except now, I'm not just a delegate sitting in those rooms. I'm trying to build them.
+Even after a prolonged period, I'm still chasing that feeling. Except now, I'm not just a delegate sitting in those rooms. I'm trying to build them.
 
-YANF, Youth As Nations' Front, wasn't born from a business plan. It was born from a question that had been quietly unsettling me for years: why does youth development still feel like it belongs only to a select few? Why are the stages that build confidence, leadership, and real-world thinking still out of reach for so many young people across this country?
+YANF — Youth As Nations' Front, wasn't born from a business plan. It was born from a question that had been quietly unsettling me for years: why does youth development still feel like it belongs only to a select few? Why are the stages that build confidence, leadership, and real-world thinking still out of reach for so many young people across this country?
 
 I've co-founded conferences. I've chaired committees across Uttarakhand, Himachal Pradesh, Jharkhand, Bihar, Delhi-NCR and beyond. I've mentored delegates and worked alongside teams at some of the country's most prominent youth platforms. And through all of it, across every committee room, every debate floor, every conversation backstage, one thing became undeniably clear:`;
 

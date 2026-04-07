@@ -4,7 +4,7 @@ const whyItems = [
   { icon: "🏛️", title: "Expert-Led Programs", text: "Our events are guided by 50+ highly qualified chairs with backgrounds in law, policy, and international affairs." },
   { icon: "🌐", title: "Real-World Simulations", text: "From UN committees to parliamentary debates, we replicate the world's most consequential forums for students to navigate." },
   { icon: "💡", title: "Invesnova", text: "Our flagship innovation program empowers students to ideate, prototype, and pitch real-world solutions, bridging creativity with impact." },
-  { icon: "📜", title: "Digital Certifications", text: "Earn certificates of excellence that are valued by universities, internships, and professional bodies across India." },
+  { icon: "📜", title: "Digital Certifications", text: "Certificate of excellence, that can be downloaded and verified digitally." },
   { icon: "⚡", title: "Confidence Building", text: "We create safe spaces where every voice matters — building the courage to ask hard questions and lead with clarity." },
   { icon: "🗺️", title: "Geopolitical Literacy", text: "Our curriculum brings global issues into focus, giving students the context to understand the world shaping their futures." },
 ];
