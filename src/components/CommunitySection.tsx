@@ -42,7 +42,7 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
         <h2 className="section-title text-center">Be a Part of a <span>Thriving Community</span></h2>
         <div className="gold-line mx-auto mb-6" />
         <p className="font-serif text-lg italic text-muted-foreground max-w-[600px] mx-auto">
-         Meet the face behind the movement, driven by a vision to empower every young mind.
+         Meet the face behind the movement — driven by a vision to empower every young mind.
         </p>
       </motion.div>
 
