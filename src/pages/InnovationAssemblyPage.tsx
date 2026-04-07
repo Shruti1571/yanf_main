@@ -294,7 +294,7 @@ const InnovationAssemblyPage = () => {
         <section className="section-padding text-center" style={{ borderTop: "1px solid hsl(var(--border))" }}>
           <motion.div {...fadeUp} className="max-w-lg mx-auto">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Got an idea? Ready to <span className="text-gradient-gold">invest</span>?
+              Got an idea? Explore the <span className="text-gradient-gold">entrepreneur</span> within you.
             </h2>
             {/* <p className="font-body text-white mb-8">Join Innovation Assembly at YANF.</p> */}
             <Link to="/" className="btn-primary-yanf inline-block">
