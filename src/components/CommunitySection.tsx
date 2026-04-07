@@ -38,11 +38,11 @@ const CommunitySection = ({ onJoinClick }: { onJoinClick: () => void }) => {
         viewport={{ once: true }}
         className="max-w-[1200px] mx-auto mb-14 text-center"
       >
-        <div className="section-label text-center">Our People</div>
+        {/* <div className="section-label text-center">Our People</div> */}
         <h2 className="section-title text-center">Be a Part of a <span>Thriving Community</span></h2>
         <div className="gold-line mx-auto mb-6" />
         <p className="font-serif text-lg italic text-muted-foreground max-w-[600px] mx-auto">
-          Meet the face behind the movement — with a vision, united by a shared purpose.
+         Meet the face behind the movement, driven by a vision to empower every young mind.
         </p>
       </motion.div>
 
